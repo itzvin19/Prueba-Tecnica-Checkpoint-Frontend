@@ -133,7 +133,7 @@ function LoginView() {
 					{isPending ? "Registrando..." : "Registrarse"}
 				</button>
 			</form>
-			<div className="flex gap-2.5">
+			<div className="flex flex-col md:flex-row md:gap-2.5">
 				<span>¿Ya tienes una cuenta?</span>
 				<a className="underline font-semibold" href="/iniciar-sesion">
 					Ingresa aquí

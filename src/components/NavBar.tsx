@@ -6,8 +6,11 @@ function NavBar() {
 		<header className="sticky top-0 z-50">
 			<nav className="p-5 py-4 flex justify-center bg-white shadow z-50">
 				<div className="w-11/12 flex justify-between items-center">
-					<Link aria-label="Regresar a la página principal" to="/" className="uppercase font-bold text-center text-2xl ">
+					<Link aria-label="Regresar a la página principal" to="/" className="hidden md:block uppercase font-bold text-center text-2xl ">
 						CheckPoint Test
+					</Link>
+					<Link aria-label="Regresar a la página principal" to="/" className="uppercase md:hidden font-bold text-center text-2xl ">
+						CK
 					</Link>
 					<User />
 				</div>

@@ -4,7 +4,7 @@ import { ToastContainer } from "react-toastify";
 function AuthLayout() {
 	return (
 		<div className="w-full min-h-screen flex items-center justify-center p-10">
-			<div className="bg-white shadow-lg rounded-md w-1/3">
+			<div className="bg-white shadow-lg rounded-md w-full md:w-2/3 xl:w-1/3">
 				<div className="w-full">
 					<h1 className="uppercase font-bold text-center text-2xl p-4 ">
 						CheckPoint Test

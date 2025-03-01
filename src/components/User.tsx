@@ -18,7 +18,7 @@ function User() {
 	};
 
 	return (
-		<div className="flex flex-col w-1/5">
+		<div className="flex flex-col w-3/4 md:w-1/3 xl:w-1/5">
 			<div className="w-full flex">
 				<span className="px-3 font-semibold text-center w-full">
 					{!isError && !isPending && data.nombre

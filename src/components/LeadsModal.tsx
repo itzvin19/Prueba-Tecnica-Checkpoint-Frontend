@@ -73,15 +73,15 @@ export default function LeadsModal({ isOpen, setIsOpen }: LeadsModal) {
 							leaveFrom="opacity-100 scale-100"
 							leaveTo="opacity-0 scale-95"
 						>
-							<DialogPanel className="w-full max-w-2/3 bg-white rounded-sm shadow-lg flex gap-4">
-								<div className="rounded-l-sm overflow-hidden w-5/8">
+							<DialogPanel className="w-full max-w-11/12 md:max-w-2/3 bg-white rounded-sm shadow-lg flex gap-4">
+								<div className="rounded-l-sm overflow-hidden hidden xl:block w-5/8">
 									<img
 										src="/shoppingcover.webp"
 										alt=""
 										className="object-cover"
 									/>
 								</div>
-								<div className="flex flex-col items-end gap-1">
+								<div className="w-full xl:w-3/8 flex flex-col items-end gap-1 px-4 py-5 xl:p-0">
 									<button
 										type="button"
 										aria-label="Cerrar Modal"
@@ -99,10 +99,10 @@ export default function LeadsModal({ isOpen, setIsOpen }: LeadsModal) {
 										className="gap-5 flex flex-col px-6"
 										onSubmit={handleSubmit(handleDownload)}
 									>
-										<DialogTitle className="text-lg font-bold uppercase">
+										<DialogTitle className="text-lg font-bold uppercase 2xl:text-xl">
 											Solo un paso más
 										</DialogTitle>
-										<Description className="mt-2 text-gray-600 text-balance">
+										<Description className="mt-2 text-gray-600 text-balance 2xl:text-lg">
 											No te pierdas ninguna de las sorpresas que tenemos para
 											ti!
 										</Description>
@@ -111,7 +111,7 @@ export default function LeadsModal({ isOpen, setIsOpen }: LeadsModal) {
 												type="text"
 												id=""
 												placeholder="Ingresar correo electrónico"
-												className="px-2 py-1  border-1 rounded-sm border-black"
+												className="px-2 py-1  border-1 rounded-sm 2xl:text-lg border-black"
 												{...register("correo", {
 													required: "Por favor ingrese un correo electrónico",
 													pattern: {
@@ -121,7 +121,7 @@ export default function LeadsModal({ isOpen, setIsOpen }: LeadsModal) {
 												})}
 											/>
 											{errors.correo ? (
-												<span className="text-red-700">
+												<span className="text-red-700 2xl:text-lg">
 													{errors.correo.message}
 												</span>
 											) : null}
@@ -131,7 +131,7 @@ export default function LeadsModal({ isOpen, setIsOpen }: LeadsModal) {
 											className="text-balance cursor-pointer w-full font-semibold bg-black text-white rounded-md p-3 flex justify-center gap-2.5 duration-200 hover:shadow-lg focus:outline-gray-400"
 										>
 											<DownloadIcon />
-											<span>Descargar Ficha Técnica</span>
+											<span className="2xl:text-xl">Descargar Ficha Técnica</span>
 										</button>
 									</form>
 								</div>

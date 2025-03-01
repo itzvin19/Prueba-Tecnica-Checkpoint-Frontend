@@ -16,7 +16,7 @@ function Store() {
 	if (data)
 		return (
 			<section className="w-full p-5 flex justify-center">
-				<div className="w-11/12 grid grid-cols-5 gap-6">
+				<div className="w-11/12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 2xl:grid-cols-6 gap-6">
 					{data.map((producto) => (
 						<StoreItem key={producto.id} producto={producto} />
 					))}

@@ -21,10 +21,7 @@ function SingleProductView() {
 		queryFn: GetUser,
 	});
 
-	const {
-		data,
-		isPending: productPending,
-	} = useQuery({
+	const { data, isPending: productPending } = useQuery({
 		queryKey: ["SingleProduct"],
 		queryFn: () => getSingleProduct(+productId),
 	});
@@ -40,28 +37,28 @@ function SingleProductView() {
 			setIsOpen(true);
 		}
 	};
-	
+
 	return (
 		<div className="w-full p-5 flex flex-col items-center min-h-[calc(100vh-80px)] justify-center">
-			<div className="w-11/12 p-10 bg-white flex flex-col min-h-96 gap-2.5 items-start shadow-lg rounded-lg">
-				<Link to="/" aria-label="Regresar a la tienda" className="underline">
+			<div className="w-11/12 2xl:w-3/4 p-10 bg-white flex flex-col min-h-96 gap-2.5 items-start shadow-lg rounded-lg">
+				<Link to="/" aria-label="Regresar a la tienda" className="underline 2xl:text-lg">
 					{"< Regresar"}
 				</Link>
-				<div className="w-full flex gap-20 ">
-					<div className="w-1/2 shadow p-8 flex items-center justify-center">
+				<div className="w-full flex flex-col xl:flex-row gap-5 xl:gap-20 ">
+					<div className="w-full xl:w-1/2 shadow p-8 flex items-center justify-center">
 						<img src={data?.imagen} alt={data?.nombre} className="h-56" />
 					</div>
-					<div className="flex w-1/2 flex-col gap-6">
-						<h1 className="uppercase font-bold text-2xl text-balance">
+					<div className="flex w-full xl:w-1/2 flex-col gap-6">
+						<h1 className="uppercase font-bold text-2xl text-balance 2xl:text-3xl">
 							{data?.nombre}
 						</h1>
 						{data?.precio ? (
-							<span className="font-bold text-xl">$ {data.precio}</span>
+							<span className="font-bold text-xl 2xl:text-2xl">$ {data.precio}</span>
 						) : null}
-						<p className="text-balance">{data?.descripcion}</p>
+						<p className="text-balance 2xl:text-lg">{data?.descripcion}</p>
 						<button
 							type="button"
-							className="text-balance cursor-pointer w-1/2 font-semibold bg-black text-white rounded-md p-3 flex justify-center gap-2.5 duration-200 hover:shadow-lg focus:outline-gray-400"
+							className="text-balance cursor-pointer w-full xl:w-1/2 2xl:w-full font-semibold bg-black text-white rounded-md p-3 flex items-center justify-center gap-2.5 duration-200 hover:shadow-lg focus:outline-gray-400"
 							onClick={() => handleDownload()}
 							onKeyDown={(event: React.KeyboardEvent) => {
 								if (event.key === "Enter" || event.key === " ") {
@@ -70,7 +67,7 @@ function SingleProductView() {
 							}}
 						>
 							<DownloadIcon />
-							<span>
+							<span className="2xl:text-xl">
 								{downloadPending ? "Descargando..." : "Descargar Ficha Técnica"}
 							</span>
 						</button>

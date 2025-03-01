@@ -56,7 +56,7 @@ function LoginView() {
 						type="text"
 						id="correoTxt"
 						placeholder="correo@correo.com"
-						className="px-2 py-1 border-1 rounded-sm"
+						className="px-2 py-1 border-1 rounded-sm 2xl:text-lg"
 						{...register("correo", {
 							required: "Debe ingresar un correo",
 							pattern: {
@@ -77,7 +77,7 @@ function LoginView() {
 					<input
 						id="txtPassword"
 						type="password"
-						className="px-2 py-1 border-1 rounded-sm"
+						className="px-2 py-1 border-1 rounded-sm 2xl:text-lg"
 						{...register("contraseña", {
 							required: "Debe ingresar una contraseña",
 						})}
@@ -88,13 +88,13 @@ function LoginView() {
 				</div>
 				<button
 					type="submit"
-					className="p-2 rounded-md cursor-pointer bg-[#222222] text-white font- text-lg disabled:opacity-50"
+					className="p-2 rounded-md cursor-pointer bg-[#222222] text-white font- text-lg disabled:opacity-50 2xl:text-xl"
 					disabled={isPending}
 				>
 					{isPending ? "Ingresando..." : "Ingresar"}
 				</button>
 			</form>
-			<div className="flex gap-2.5">
+			<div className="flex md:gap-2.5 flex-col md:flex-row 2xl:text-lg">
 				<span>¿Aún no tienes una cuenta?</span>
 				<a className="underline font-semibold" href="/registro">
 					Registrate aquí
