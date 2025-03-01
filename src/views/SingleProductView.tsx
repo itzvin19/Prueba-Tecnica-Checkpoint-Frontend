@@ -21,7 +21,7 @@ function SingleProductView() {
 		queryFn: GetUser,
 	});
 
-	const { data, isPending: productPending } = useQuery({
+	const { data} = useQuery({
 		queryKey: ["SingleProduct"],
 		queryFn: () => getSingleProduct(+productId),
 	});
