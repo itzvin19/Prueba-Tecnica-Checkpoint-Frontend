@@ -6,6 +6,7 @@ function User() {
 	const { data, isError, isPending } = useQuery({
 		queryKey: ["User"],
 		queryFn: GetUser,
+		refetchOnWindowFocus:false
 	});
 
 	const queryClient = useQueryClient();

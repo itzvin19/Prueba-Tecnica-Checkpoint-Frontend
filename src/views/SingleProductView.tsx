@@ -19,11 +19,13 @@ function SingleProductView() {
 	} = useQuery({
 		queryKey: ["User"],
 		queryFn: GetUser,
+		refetchOnWindowFocus:false
 	});
 
 	const { data} = useQuery({
 		queryKey: ["SingleProduct"],
 		queryFn: () => getSingleProduct(+productId),
+		refetchOnWindowFocus:false
 	});
 
 	const { mutateAsync, isPending: downloadPending } = useMutation({
